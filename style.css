@@ -1,0 +1,734 @@
+*{
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+
+body{
+
+    background:
+        radial-gradient(circle at top,
+        #1a1a1a,
+        #050505);
+
+    color: white;
+
+    font-family: Arial, sans-serif;
+
+    overflow-x: hidden;
+
+    min-height: 100vh;
+
+    text-align: center;
+
+    animation: bodyPulse 6s infinite alternate;
+
+}
+
+
+
+/* =========================
+   BODY GLOW PULSE
+========================= */
+
+@keyframes bodyPulse{
+
+    0%{
+
+        background-color: #050505;
+
+    }
+
+    100%{
+
+        background-color: #0b0b0b;
+
+    }
+
+}
+
+
+
+
+/* =========================
+   BACKGROUND GLOW
+========================= */
+
+.bg-glow{
+
+    position: fixed;
+
+    width: 700px;
+    height: 700px;
+
+    background: #00ff88;
+
+    filter: blur(260px);
+
+    opacity: 0.10;
+
+    top: -220px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    z-index: -1;
+
+}
+
+
+
+/* =========================
+   INVENTOR TAG
+========================= */
+
+.inventor-tag{
+
+    position: fixed;
+
+    top: 18px;
+    left: 18px;
+
+    padding: 8px 16px;
+
+    border-radius: 14px;
+
+    background: rgba(255,255,255,0.05);
+
+    border: 1px solid rgba(255,255,255,0.08);
+
+    backdrop-filter: blur(14px);
+
+    font-size: 13px;
+
+    letter-spacing: 1px;
+
+    color: rgba(255,255,255,0.8);
+
+    overflow: hidden;
+
+    box-shadow:
+        0 0 20px rgba(255,120,0,0.12);
+
+    z-index: 999;
+
+}
+
+
+
+.inventor-tag span{
+
+    color: #00ff88;
+
+    font-weight: bold;
+
+    text-shadow:
+        0 0 8px #00ff88;
+
+}
+
+
+
+/* =========================
+   FIRE PARTICLES
+========================= */
+
+.fire{
+
+    position: absolute;
+
+    bottom: -20px;
+
+    width: 10px;
+    height: 10px;
+
+    border-radius: 50%;
+
+    background: radial-gradient(circle,
+        #ffdd55,
+        #ff6600,
+        transparent);
+
+    opacity: 0.8;
+
+    animation: firePop 2s infinite;
+
+}
+
+
+.fire1{
+
+    left: 20px;
+
+    animation-delay: 0s;
+
+}
+
+.fire2{
+
+    left: 70px;
+
+    animation-delay: 0.8s;
+
+}
+
+.fire3{
+
+    left: 120px;
+
+    animation-delay: 1.5s;
+
+}
+
+
+
+/* =========================
+   FIRE ANIMATION
+========================= */
+
+@keyframes firePop{
+
+    0%{
+
+        transform:
+            translateY(0)
+            scale(0.4);
+
+        opacity: 0;
+
+    }
+
+    20%{
+
+        opacity: 1;
+
+    }
+
+    100%{
+
+        transform:
+            translateY(-70px)
+            scale(1.8);
+
+        opacity: 0;
+
+    }
+
+}
+
+
+
+
+/* =========================
+   TITLE
+========================= */
+
+.title{
+
+    margin-top: 45px;
+
+    font-size: 72px;
+
+    letter-spacing: 5px;
+
+    font-weight: bold;
+
+    text-shadow:
+        0 0 20px #00ff88,
+        0 0 40px #00ff88,
+        0 0 80px rgba(0,255,136,0.3);
+
+}
+
+
+
+.subtitle{
+
+    margin-top: 14px;
+
+    font-size: 22px;
+
+    color: rgba(255,255,255,0.7);
+
+    letter-spacing: 2px;
+
+}
+
+
+
+
+/* =========================
+   INFO CONTAINER
+========================= */
+
+.info-container{
+
+    margin-top: 45px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: flex-start;
+
+    gap: 35px;
+
+    flex-wrap: wrap;
+
+}
+
+
+
+
+/* =========================
+   SIDE PANELS
+========================= */
+
+.side-panel{
+
+    width: 280px;
+
+    background: rgba(255,255,255,0.04);
+
+    border: 1px solid rgba(255,255,255,0.08);
+
+    border-radius: 22px;
+
+    padding: 24px;
+
+    backdrop-filter: blur(16px);
+
+    box-shadow:
+        0 0 30px rgba(0,255,136,0.06);
+
+    transition: 0.3s;
+
+}
+
+
+.side-panel:hover{
+
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 0 40px rgba(0,255,136,0.14);
+
+}
+
+
+
+.side-panel h2{
+
+    margin-bottom: 22px;
+
+    color: #00ff88;
+
+    font-size: 24px;
+
+    letter-spacing: 1px;
+
+}
+
+
+
+
+/* =========================
+   MODE ITEMS
+========================= */
+
+.mode-item{
+
+    margin-bottom: 16px;
+
+    padding: 16px;
+
+    border-radius: 16px;
+
+    background: rgba(255,255,255,0.04);
+
+    font-size: 19px;
+
+    transition: 0.25s;
+
+    border: 1px solid transparent;
+
+}
+
+
+.mode-item:hover{
+
+    transform: scale(1.03);
+
+    background: rgba(0,255,136,0.10);
+
+    border-color: rgba(0,255,136,0.2);
+
+}
+
+
+
+.mode-item span{
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 32px;
+    height: 32px;
+
+    border-radius: 50%;
+
+    background: #00ff88;
+
+    color: black;
+
+    font-weight: bold;
+
+    margin-right: 10px;
+
+}
+
+
+
+
+/* =========================
+   CENTER PANEL
+========================= */
+
+.center-panel{
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+}
+
+
+
+
+/* =========================
+   MODE BOX
+========================= */
+
+#modeBox{
+
+    width: 390px;
+
+    padding: 22px;
+
+    background: rgba(255,255,255,0.06);
+
+    border-radius: 18px;
+
+    font-size: 30px;
+
+    border: 1px solid rgba(255,255,255,0.08);
+
+    backdrop-filter: blur(16px);
+
+    box-shadow:
+        0 0 30px rgba(0,255,136,0.08);
+
+}
+
+
+
+
+/* =========================
+   CURRENT KEY
+========================= */
+
+#currentKey{
+
+    margin-top: 24px;
+
+    width: 480px;
+
+    padding: 22px;
+
+    background: rgba(255,255,255,0.04);
+
+    border-radius: 18px;
+
+    font-size: 24px;
+
+    border: 1px solid rgba(255,255,255,0.08);
+
+    backdrop-filter: blur(12px);
+
+}
+
+
+
+
+/* =========================
+   SONG TIPS
+========================= */
+
+.tip{
+
+    margin-bottom: 18px;
+
+    padding: 18px;
+
+    border-radius: 18px;
+
+    background: rgba(255,255,255,0.04);
+
+    font-size: 17px;
+
+    color: rgba(255,255,255,0.88);
+
+    transition: 0.25s;
+
+    cursor: pointer;
+
+    border-left: 4px solid #00ff88;
+
+    line-height: 1.9;
+
+    text-align: left;
+
+}
+
+
+.tip:hover{
+
+    background: rgba(0,255,136,0.10);
+
+    transform:
+        translateX(6px)
+        scale(1.02);
+
+    box-shadow:
+        0 0 20px rgba(0,255,136,0.15);
+
+}
+
+
+
+.tip b{
+
+    color: #00ff88;
+
+    font-size: 20px;
+
+}
+
+
+
+
+/* =========================
+   KEYBOARD
+========================= */
+
+.keyboard{
+
+    margin-top: 80px;
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    justify-content: center;
+
+    align-items: flex-end;
+
+    gap: 14px;
+
+    padding: 40px;
+
+    perspective: 1000px;
+
+}
+
+
+
+
+/* =========================
+   WHITE KEYS
+========================= */
+
+.piano-key{
+
+    width: 74px;
+    height: 230px;
+
+    background:
+        linear-gradient(
+        to bottom,
+        #ffffff,
+        #d7d7d7
+    );
+
+    color: black;
+
+    border-radius: 16px;
+
+    display: flex;
+
+    align-items: flex-end;
+
+    justify-content: center;
+
+    padding-bottom: 20px;
+
+    font-size: 24px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: all 0.08s ease;
+
+    user-select: none;
+
+    box-shadow:
+        0 12px 25px rgba(0,0,0,0.45);
+
+    transform-style: preserve-3d;
+
+}
+
+
+
+
+/* =========================
+   BLACK KEYS
+========================= */
+
+.black{
+
+    background:
+        linear-gradient(
+        to bottom,
+        #161616,
+        #000
+    );
+
+    color: white;
+
+    height: 160px;
+
+}
+
+
+
+
+/* =========================
+   ACTIVE KEYS
+========================= */
+
+.active{
+
+    transform:
+        scale(0.92)
+        translateY(8px);
+
+    background: #00ff88 !important;
+
+    color: black !important;
+
+    box-shadow:
+        0 0 20px #00ff88,
+        0 0 50px rgba(0,255,136,0.7);
+
+}
+
+
+
+
+/* =========================
+   FLOATING PARTICLES
+========================= */
+
+.particle{
+
+    position: fixed;
+
+    width: 8px;
+    height: 8px;
+
+    border-radius: 50%;
+
+    background: #00ff88;
+
+    pointer-events: none;
+
+    animation: floatUp 1s linear forwards;
+
+}
+
+
+@keyframes floatUp{
+
+    0%{
+
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+
+    }
+
+    100%{
+
+        opacity: 0;
+
+        transform:
+            translateY(-120px)
+            scale(2);
+
+    }
+
+}
+
+
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width: 900px){
+
+    .title{
+
+        font-size: 48px;
+
+    }
+
+    #modeBox,
+    #currentKey{
+
+        width: 90%;
+
+    }
+
+    .side-panel{
+
+        width: 90%;
+
+    }
+
+    .piano-key{
+
+        width: 58px;
+        height: 180px;
+
+    }
+
+    .black{
+
+        height: 120px;
+
+    }
+
+}
